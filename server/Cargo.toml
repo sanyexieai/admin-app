@@ -1,0 +1,26 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7"
+bcrypt = "0.15"
+chrono = { version = "0.4", features = ["serde"] }
+dotenv = "0.15"
+serde_json = "1.0"
+axum-macros = "0.4"
+jsonwebtoken = "9.3"
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.37", features = ["full"] }
+tower-http = { version = "0.5", features = ["cors"] }
+sea-orm = { version = "0.12", features = [
+    "sqlx-sqlite",
+    "runtime-tokio-rustls",
+    "macros",
+] }
+
+migration = { path = "migration" }
+entity = { path = "entity" }
+
+
